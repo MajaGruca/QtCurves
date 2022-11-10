@@ -1,8 +1,6 @@
 #include "MainWindow.h"
-#include <QColor>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     ui.setupUi(this);
 }
@@ -30,5 +28,11 @@ void MainWindow::on_btnHuygens_clicked()
 void MainWindow::on_btnHypo_clicked()
 {
     ui.renderArea->setShape(RenderArea::ShapeType::HypoCycloid);
+    ui.renderArea->repaint();
+}
+
+void MainWindow::on_btnFuture_clicked()
+{
+    ui.renderArea->setShape(RenderArea::ShapeType::FutureCurve);
     ui.renderArea->repaint();
 }
