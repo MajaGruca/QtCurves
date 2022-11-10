@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include <QColor>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -6,5 +7,28 @@ MainWindow::MainWindow(QWidget *parent)
     ui.setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{}
+MainWindow::~MainWindow() {}
+
+void MainWindow::on_btnAstroid_clicked()
+{
+    ui.renderArea->setShape(RenderArea::ShapeType::Astroid);
+    ui.renderArea->repaint();
+}
+
+void MainWindow::on_btnCycloid_clicked()
+{
+    ui.renderArea->setShape(RenderArea::ShapeType::Cycloid);
+    ui.renderArea->repaint();
+}
+
+void MainWindow::on_btnHuygens_clicked()
+{
+    ui.renderArea->setShape(RenderArea::ShapeType::HuygensCycloid);
+    ui.renderArea->repaint();
+}
+
+void MainWindow::on_btnHypo_clicked()
+{
+    ui.renderArea->setShape(RenderArea::ShapeType::HypoCycloid);
+    ui.renderArea->repaint();
+}
