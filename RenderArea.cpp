@@ -8,7 +8,7 @@ RenderArea::RenderArea(QWidget *parent) :
 	mShapeColor(Qt::black),
 	mShape(ShapeType::Astroid),
 	mIntervalLength(2 * M_PI),
-	mScale(40.f),
+	mScale(60.f),
 	mStepCount(256)
 {
 	ui.setupUi(this);
@@ -20,19 +20,19 @@ void RenderArea::on_shape_changed()
 {
 	switch (mShape) {
 	case ShapeType::Astroid:
-		mScale = 40.f;
+		mScale = 60.f;
 		mIntervalLength = 2 * M_PI;
 		mStepCount = 256;
 		break;
 
 	case ShapeType::Cycloid:
-		mScale = 4.f;
+		mScale = 5.f;
 		mIntervalLength = 6 * M_PI;
 		mStepCount = 128;
 		break;
 
 	case ShapeType::HuygensCycloid:
-		mScale = 4.f;
+		mScale = 8.f;
 		mIntervalLength = 4 * M_PI;
 		mStepCount = 256;
 		break;
@@ -43,10 +43,10 @@ void RenderArea::on_shape_changed()
 		mStepCount = 256;
 		break;
 
-	case ShapeType::FutureCurve:
-		mScale = 15.f;
-		mIntervalLength = 2 * M_PI;
-		mStepCount = 256;
+	case ShapeType::Line:
+		mScale = 100.f;
+		mIntervalLength = 3;
+		mStepCount = 128;
 		break;
 
 	default:
@@ -69,8 +69,8 @@ QPointF RenderArea::compute(float t)
 	case ShapeType::HypoCycloid:
 		return compute_hypo(t);
 
-	case ShapeType::FutureCurve:
-		return compute_future_curve(t);
+	case ShapeType::Line:
+		return compute_line(t);
 
 	default:
 		break;
@@ -106,10 +106,9 @@ QPointF RenderArea::compute_hypo(float t)
 				   1.5 * (2 * sin(t) - sin(2 * t)));
 }
 
-QPointF RenderArea::compute_future_curve(float t)
+QPointF RenderArea::compute_line(float t)
 {
-	// TODO
-	return QPointF();
+	return QPointF(t - 1.5, t - 1.5);
 }
 
 QSize RenderArea::minimumSizeHint() const
@@ -137,8 +136,13 @@ void RenderArea::paintEvent(QPaintEvent* event)
 	QPoint center = this->rect().center();
 
 	float step = mIntervalLength / mStepCount;
+
+	QPointF startPoint = compute(0);
+	QPoint prevPixel;
+	prevPixel.setX(startPoint.x() * mScale + center.x());
+	prevPixel.setY(startPoint.y() * mScale + center.y());
 	
-	for (float t = 0; t < mIntervalLength; t += step)
+	for (float t = step; t < mIntervalLength; t += step)
 	{
 		QPointF point = compute(t);
 
@@ -146,6 +150,7 @@ void RenderArea::paintEvent(QPaintEvent* event)
 		pixel.setX(point.x() * mScale + center.x());
 		pixel.setY(point.y() * mScale + center.y());
 
-		painter.drawPoint(pixel);
+		painter.drawLine(pixel, prevPixel);
+		prevPixel = pixel;
 	}
 }

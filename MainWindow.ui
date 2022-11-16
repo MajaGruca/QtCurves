@@ -51,9 +51,9 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="btnFuture">
+         <widget class="QPushButton" name="btnLine">
           <property name="text">
-           <string>Future Curve</string>
+           <string>Line</string>
           </property>
          </widget>
         </item>

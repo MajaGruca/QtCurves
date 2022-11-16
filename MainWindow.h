@@ -16,7 +16,7 @@ private slots:
     void on_btnCycloid_clicked();
     void on_btnHuygens_clicked();
     void on_btnHypo_clicked();
-    void on_btnFuture_clicked();
+    void on_btnLine_clicked();
 
 private:
     Ui::MainWindowClass ui;

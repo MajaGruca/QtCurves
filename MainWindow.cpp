@@ -31,8 +31,8 @@ void MainWindow::on_btnHypo_clicked()
     ui.renderArea->repaint();
 }
 
-void MainWindow::on_btnFuture_clicked()
+void MainWindow::on_btnLine_clicked()
 {
-    ui.renderArea->setShape(RenderArea::ShapeType::FutureCurve);
+    ui.renderArea->setShape(RenderArea::ShapeType::Line);
     ui.renderArea->repaint();
 }
