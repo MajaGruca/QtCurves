@@ -28,7 +28,7 @@ void RenderArea::on_shape_changed()
 	case ShapeType::Cycloid:
 		mScale = 5.f;
 		mIntervalLength = 6 * M_PI;
-		mStepCount = 128;
+		mStepCount = 256;
 		break;
 
 	case ShapeType::HuygensCycloid:
@@ -44,7 +44,7 @@ void RenderArea::on_shape_changed()
 		break;
 
 	case ShapeType::Line:
-		mScale = 100.f;
+		mScale = 80.f;
 		mIntervalLength = 3;
 		mStepCount = 128;
 		break;
