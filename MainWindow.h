@@ -17,9 +17,9 @@ private slots:
     void on_btnHuygens_clicked();
     void on_btnHypo_clicked();
     void on_btnLine_clicked();
-    void on_spinScale_valueChanged(double scale);
+    void on_sliderScale_valueChanged(int scale);
     void on_spinInterval_valueChanged(double interval);
-    void on_spinStep_valueChanged(int step);
+    void on_sliderStep_valueChanged(int step);
 
 private:
     Ui::MainWindowClass ui;

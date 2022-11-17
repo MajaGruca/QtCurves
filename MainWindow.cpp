@@ -3,9 +3,13 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     ui.setupUi(this);
-    ui.spinScale->setValue(ui.renderArea->getScale());
+    ui.sliderScale->setValue(ui.renderArea->getScale() * 10.f);
     ui.spinInterval->setValue(ui.renderArea->getIntervalLength());
-    ui.spinStep->setValue(ui.renderArea->getStepCount());
+    setStyleSheet(
+        "QPushButton { background-color: #e9dfed; } "
+        "QPushButton:pressed { background-color: #d5ccd9; } "
+        "QSlider::handle { background-color: #800080; }");
+    setMinimumSize(570, 300);
 }
 
 MainWindow::~MainWindow() {}
@@ -35,9 +39,9 @@ void MainWindow::on_btnLine_clicked()
     update_ui(RenderArea::ShapeType::Line);
 }
 
-void MainWindow::on_spinScale_valueChanged(double scale)
+void MainWindow::on_sliderScale_valueChanged(int scale)
 {
-    ui.renderArea->setScale(scale);
+    ui.renderArea->setScale(scale / 10.f);
     ui.renderArea->repaint();
 }
 
@@ -47,7 +51,7 @@ void MainWindow::on_spinInterval_valueChanged(double interval)
     ui.renderArea->repaint();
 }
 
-void MainWindow::on_spinStep_valueChanged(int step)
+void MainWindow::on_sliderStep_valueChanged(int step)
 {
     ui.renderArea->setStepCount(step);
     ui.renderArea->repaint();
@@ -57,7 +61,7 @@ void MainWindow::update_ui(RenderArea::ShapeType shapeType)
 {
     ui.renderArea->setShape(shapeType);
     ui.renderArea->repaint();
-    ui.spinScale->setValue(ui.renderArea->getScale());
+    ui.sliderScale->setValue(ui.renderArea->getScale() * 10.f);
     ui.spinInterval->setValue(ui.renderArea->getIntervalLength());
-    ui.spinStep->setValue(ui.renderArea->getStepCount());
+    ui.sliderStep->setValue(ui.renderArea->getStepCount());
 }

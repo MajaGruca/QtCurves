@@ -32,7 +32,7 @@ public:
 	void setIntervalLength(float interval) { mIntervalLength = interval; }
 	float getIntervalLength() const { return mIntervalLength; }
 
-	void setStepCount(float step) { mStepCount = step; }
+	void setStepCount(int step) { mStepCount = step; }
 	int getStepCount() const { return mStepCount; }
 
 protected:

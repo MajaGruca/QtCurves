@@ -4,7 +4,7 @@
 
 RenderArea::RenderArea(QWidget *parent) :
 	QWidget(parent),
-	mBackgroundColor(Qt::red),
+	mBackgroundColor(Qt::darkMagenta),
 	mShapeColor(Qt::black),
 	mShape(ShapeType::Astroid),
 	mIntervalLength(2 * M_PI),
@@ -38,7 +38,7 @@ void RenderArea::on_shape_changed()
 		break;
 
 	case ShapeType::HypoCycloid:
-		mScale = 40.f;
+		mScale = 30.f;
 		mIntervalLength = 2 * M_PI;
 		mStepCount = 256;
 		break;
