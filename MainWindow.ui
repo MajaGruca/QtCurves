@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>751</width>
+    <width>752</width>
     <height>441</height>
    </rect>
   </property>
@@ -27,9 +27,10 @@
   </property>
   <property name="font">
    <font>
-    <family>Small Fonts</family>
-    <pointsize>10</pointsize>
+    <family>Arial</family>
+    <pointsize>9</pointsize>
     <bold>false</bold>
+    <kerning>true</kerning>
    </font>
   </property>
   <property name="windowTitle">
@@ -46,7 +47,7 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #faf5fc;</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="sizePolicy">
@@ -84,7 +85,7 @@
        </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2,2,2,2,2,0,0,0,0">
+       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2,2,2,2,2,2,2,0,0,0,0,0">
         <property name="spacing">
          <number>9</number>
         </property>
@@ -191,12 +192,21 @@
         </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
           <item>
            <widget class="QLabel" name="label">
             <property name="minimumSize">
              <size>
               <width>65</width>
-              <height>13</height>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>143</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="text">
@@ -210,6 +220,12 @@
              <size>
               <width>65</width>
               <height>18</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>143</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="maximum">
@@ -230,12 +246,21 @@
           <property name="rightMargin">
            <number>0</number>
           </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
           <item>
            <widget class="QLabel" name="label_2">
             <property name="minimumSize">
              <size>
               <width>50</width>
-              <height>19</height>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>70</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="text">
@@ -248,7 +273,13 @@
             <property name="minimumSize">
              <size>
               <width>50</width>
-              <height>19</height>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>73</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="maximum">
@@ -263,12 +294,21 @@
         </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
           <item>
            <widget class="QLabel" name="label_3">
             <property name="minimumSize">
              <size>
               <width>65</width>
-              <height>13</height>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>143</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="text">
@@ -284,6 +324,12 @@
               <height>18</height>
              </size>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>143</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="minimum">
              <number>1</number>
             </property>
@@ -296,6 +342,63 @@
            </widget>
           </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="minimumSize">
+           <size>
+            <width>65</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>143</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Colors:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnBackground">
+          <property name="minimumSize">
+           <size>
+            <width>130</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>143</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Background</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnLineColor">
+          <property name="minimumSize">
+           <size>
+            <width>130</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>143</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Line</string>
+          </property>
+         </widget>
         </item>
         <item>
          <spacer name="verticalSpacer">

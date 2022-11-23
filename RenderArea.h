@@ -35,11 +35,16 @@ public:
 	void setStepCount(int step) { mStepCount = step; }
 	int getStepCount() const { return mStepCount; }
 
+	void resetBackgroundColor() { mBackgroundColor = mDefaultBackgroundColor; }
+	void resetShapeColor() { mShapeColor = mDefaultShapeColor; }
+
 protected:
 	void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
 private:
 	Ui::RenderAreaClass ui;
+	const QColor mDefaultBackgroundColor{ Qt::darkMagenta };
+	const QColor mDefaultShapeColor{ Qt::black };
 	QColor mBackgroundColor;
 	QColor mShapeColor;
 	ShapeType mShape;

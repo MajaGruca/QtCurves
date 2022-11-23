@@ -4,8 +4,8 @@
 
 RenderArea::RenderArea(QWidget *parent) :
 	QWidget(parent),
-	mBackgroundColor(Qt::darkMagenta),
-	mShapeColor(Qt::black),
+	mBackgroundColor(mDefaultBackgroundColor),
+	mShapeColor(mDefaultShapeColor),
 	mShape(ShapeType::Astroid),
 	mIntervalLength(2 * M_PI),
 	mScale(60.f),
@@ -129,10 +129,9 @@ void RenderArea::paintEvent(QPaintEvent* event)
 	painter.setRenderHint(QPainter::Antialiasing, true);
 
 	painter.setBrush(mBackgroundColor);
-	painter.setPen(mShapeColor);
-
 	painter.drawRect(this->rect());
 
+	painter.setPen(mShapeColor);
 	QPoint center = this->rect().center();
 
 	float step = mIntervalLength / mStepCount;

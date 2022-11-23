@@ -17,6 +17,8 @@ private slots:
     void on_btnHuygens_clicked();
     void on_btnHypo_clicked();
     void on_btnLine_clicked();
+    void on_btnLineColor_clicked();
+    void on_btnBackground_clicked();
     void on_sliderScale_valueChanged(int scale);
     void on_spinInterval_valueChanged(double interval);
     void on_sliderStep_valueChanged(int step);
